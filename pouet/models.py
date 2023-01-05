@@ -12,6 +12,11 @@ class Production(models.Model):
     pouet_id = models.IntegerField(unique=True, db_index=True)
     name = models.CharField(max_length=255)
     groups = models.ManyToManyField(Group, related_name='productions')
+    vote_up_count = models.IntegerField(null=True, blank=True)
+    vote_pig_count = models.IntegerField(null=True, blank=True)
+    vote_down_count = models.IntegerField(null=True, blank=True)
+    cdc_count = models.IntegerField(null=True, blank=True)
+    popularity = models.FloatField(null=True, blank=True)
     last_seen_at = models.DateTimeField()
 
 
